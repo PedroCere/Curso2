@@ -45,3 +45,4 @@ console.log(mySet);
 mySet.delete(10);
 
 console.log(mySet);
+
