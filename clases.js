@@ -111,3 +111,43 @@ let person6 = new GetPerson("Brais", 23, "Caca")
 console.log(person6)
 console.log(person6.name)
 
+
+// ✅ Clase base
+class PersonWithMethod {
+    constructor(name, age, alias) {
+        this.name = name;
+        this.age = age;
+        this.alias = alias;
+    }
+
+    walk() {
+        console.log(`${this.name} camina`);
+    }
+}
+
+// ✅ Subclase que hereda de PersonWithMethod
+class Developer extends PersonWithMethod {
+    constructor(name, age, alias, language) {
+        super(name, age, alias);  // Llama al constructor de la clase padre
+        this.language = language; // Nueva propiedad solo en Developer
+    }
+
+    code() {
+        console.log(`${this.name} está programando en ${this.language}`);
+    }
+
+    // Sobrescribimos (override) el método walk
+    walk() {
+        console.log(`${this.name} camina rápido hacia el teclado`);
+    }
+}
+
+// 🧪 Prueba
+const dev1 = new Developer("Ana", 28, "AnitaDev", "JavaScript");
+
+dev1.walk();  // Ana camina rápido hacia el teclado (override)
+dev1.code();  // Ana está programando en JavaScript
+
+console.log(dev1); // Developer con propiedades heredadas + language
+
+
