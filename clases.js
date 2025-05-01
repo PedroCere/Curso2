@@ -1,0 +1,113 @@
+// Clases
+// Una clase en JavaScript es una plantilla para crear objetos con propiedades y métodos. 
+// Es una forma más clara y estructurada de trabajar con la programación orientada a objetos (POO), 
+// introducida en ES6 (ECMAScript 2015).
+
+
+// ¿Para qué sirven? Las clases se usan para crear múltiples objetos similares (con los mismos atributos y comportamientos), sin tener que escribir todo desde cero cada vez.
+
+
+
+class Person {
+    constructor(name,age,alias){
+        this.name = name
+        this.age = age
+        this.alias = alias
+    }
+}
+
+// Sintaxis
+
+let person = new Person("Brais",25,"Pedrocapo")
+
+console.log(person)
+
+// Valores por defecto 
+
+class DefaultPerson {
+    constructor(name = "Nombre por defecto",age,alias){
+        this.name = name
+        this.age = age
+        this.alias = alias
+    }
+}
+
+let DefaultPersonerson = new Person("pedro")
+
+// Acceso a propiedades
+
+console.log(person.name)
+console.log(person["alias"])
+
+person.alias = "Moure Dev"
+
+// Funciones en calses 
+
+class Person2 {
+    constructor(name,age,alias){
+        this.name = name
+        this.age = age
+        this.alias = alias
+    } 
+    walk(){
+        console.log("La persona camina")
+    }
+}
+
+let person4 = Person2("Brais", 23, "Caca")
+person4.walk()
+
+// Propiedades privadas, solo se accede desde dentro de la clase
+
+
+class PrivatePerson {
+    
+    #bank // La defino antes con una almoadilla para que sea privada
+
+    constructor(name,age,alias,bank){
+        this.name = name
+        this.age = age
+        this.alias = alias
+        this.#bank =  bank
+    } 
+        pay(){
+            this.#bank
+        }
+}
+
+let person5 = new Person2("Brais", 23, "Caca", "asdasdasdsad")
+
+console.log(person5.bank)
+
+
+// Getters y Setters
+
+class GetPerson {
+    
+    #name
+    #age
+    #alias
+    constructor(name,age,alias){
+        this.#name = name
+        this.#age = age
+        this.#alias = alias
+    } 
+
+    get name(){             // get lo que hace es dejar que uses u obotengas una propiedad que es privada fuera de la clase
+        return this.name
+    }
+
+    set age(newAge){
+        return this.#age = newAge
+    }
+
+}
+
+
+
+
+let person6 = new GetPerson("Brais", 23, "Caca")
+
+console.log(person6)
+console.log(person6.name)
+

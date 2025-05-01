@@ -1,5 +1,8 @@
-// Desestructuración de arrays
 
+//La desestructuración te permite extraer valores de arrays u objetos
+// y asignarlos a variables de forma sencilla.
+
+// Desestructuración de arrays
 const numeros = [1, 2, 3];
 const [a, b, c] = numeros;
 
@@ -8,7 +11,6 @@ console.log(b); // 2
 console.log(c); // 3
 
 // Desestructuración de objetos 
-
 const persona = {
     nombre: "Juan",
     edad: 30
@@ -19,7 +21,7 @@ const persona = {
   console.log(nombre); // "Juan"
   console.log(edad);   // 30
 
-  // Puedes renombrar las variables si lo necesitas
+// Puedes renombrar las variables si lo necesitas
 const { nombre: nombreUsuario } = persona;
 console.log(nombreUsuario); // "Juan"
 
@@ -46,3 +48,4 @@ Concepto	Desestructuración	Spreading
 ¿Dónde se usa?	Lado izquierdo de asignaciones	Lado derecho de asignaciones
 Símbolo usado	No usa símbolos especiales	Usa ...
 */
+
