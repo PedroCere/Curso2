@@ -92,5 +92,16 @@ for (let value in person4){
 }
 
 
+// Funciones como objects
 
+function Person(name,age){
+    this.age = age
+    this.name = name
+}
+
+let person5 = new Person("Brais", 37)
+console.log(person5)
+
+console.log(typeof person5)
+console.log(typeof person)
 
